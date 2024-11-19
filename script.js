@@ -1,15 +1,13 @@
-document.getElementById("submitSantet").addEventListener("click", function () {
-  // Ambil data dari input
-  const penerima = document.getElementById("penerima").value;
-  const jenisSantet = document.getElementById("jenisSantet").value;
+function kirimSantet() {
+    const namaPengirim = document.getElementById('namaPengirim').value.trim();
+    const namaPenerima = document.getElementById('namaPenerima').value.trim();
+    const jenisSantet = document.getElementById('jenisSantet').value;
 
-  // Validasi input
-  if (penerima.trim() === "") {
-    alert("Nama penerima harus diisi!");
-    return;
-  }
+    if (namaPengirim === "" || namaPenerima === "" || jenisSantet === "") {
+        alert("Mohon isi semua kolom!");
+        return;
+    }
 
-  // Tampilkan hasil
-  const resultDiv = document.getElementById("result");
-  resultDiv.innerHTML = `Santet jenis <strong>${jenisSantet}</strong> telah dikirim kepada <strong>${penerima}</strong>!`;
-});
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `Santet jenis <strong>${jenisSantet}</strong> berhasil dikirim oleh <strong>${namaPengirim}</strong> ke <strong>${namaPenerima}</strong>. (Candaan aja ya!)`;
+}
